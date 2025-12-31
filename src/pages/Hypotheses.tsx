@@ -96,9 +96,9 @@ const hypotheses: Hypothesis[] = [
 const getStatusBadge = (status: Hypothesis["status"]) => {
   switch (status) {
     case "awaiting":
-      return <span className="badge-awaiting">Awaiting validation</span>;
+      return <span className="badge-awaiting">Context Pending</span>;
     case "supported":
-      return <span className="badge-supported">Clinically supported</span>;
+      return <span className="badge-supported">Evidence Aligned</span>;
     case "concerns":
       return <span className="badge-concerns">Feasibility concerns</span>;
   }
@@ -166,7 +166,7 @@ const Hypotheses = () => {
                 )
               }
             >
-              Awaiting Validation
+              Context Pending
             </DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem
               checked={statusFilter.includes("supported")}
@@ -178,7 +178,7 @@ const Hypotheses = () => {
                 )
               }
             >
-              Clinically Supported
+              Evidence Aligned
             </DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem
               checked={statusFilter.includes("concerns")}

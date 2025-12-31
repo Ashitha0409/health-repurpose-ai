@@ -26,7 +26,7 @@ const Dashboard = () => {
           Research Dashboard
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
-          AI-powered drug repurposing hypothesis generation and clinical validation
+          AI-powered drug repurposing hypothesis generation and domain expert review
         </p>
       </div>
 

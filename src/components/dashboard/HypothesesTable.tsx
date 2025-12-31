@@ -52,9 +52,9 @@ const mockHypotheses: Hypothesis[] = [
 const getStatusBadge = (status: Hypothesis["status"]) => {
   switch (status) {
     case "awaiting":
-      return <span className="badge-awaiting">Awaiting validation</span>;
+      return <span className="badge-awaiting">Context Pending</span>;
     case "supported":
-      return <span className="badge-supported">Clinically supported</span>;
+      return <span className="badge-supported">Evidence Aligned</span>;
     case "concerns":
       return <span className="badge-concerns">Feasibility concerns</span>;
   }
@@ -111,10 +111,10 @@ const HypothesesTable = () => {
                   Source of Evidence
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  AI Confidence
+                  Evidence Strength
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Validation Status
+                  Evidence Status
                 </th>
               </tr>
             </thead>

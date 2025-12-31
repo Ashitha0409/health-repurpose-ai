@@ -39,7 +39,7 @@ const principles = [
     icon: Users,
     title: "Clinician-in-the-Loop",
     description:
-      "Every AI hypothesis requires human clinical validation before any downstream action can be taken.",
+      "Every AI hypothesis requires a domain expert contextual review before any downstream action can be taken.",
   },
   {
     icon: Cpu,
@@ -73,8 +73,8 @@ const architectureSteps = [
   },
   {
     step: 4,
-    title: "Clinician Validation",
-    description: "Human experts review and validate AI suggestions",
+    title: "Domain Expert Review",
+    description: "Human experts perform contextual review of AI suggestions",
     icon: Users,
     color: "bg-teal-500",
   },
@@ -95,7 +95,7 @@ const About = () => {
       {/* Page Header */}
       <div className="mb-2">
         <h1 className="text-2xl font-semibold text-foreground">
-          About HealthRepurpose AI
+          About ElaraX
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
           Learn about our platform architecture, security, and ethical AI
@@ -115,12 +115,7 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                HealthRepurpose AI accelerates drug discovery for neglected
-                tropical diseases by leveraging AI to identify potential drug
-                repurposing candidates from existing approved medications. Our
-                platform combines the power of Azure AI with rigorous clinical
-                validation to ensure scientifically sound and ethically
-                responsible research outcomes.
+                ElaraX accelerates drug discovery for neglected tropical diseases by leveraging AI to identify potential drug repurposing candidates from existing approved medications. Our platform combines the power of Azure AI with rigorous domain expert review to ensure scientifically sound and ethically responsible research outcomes.
               </p>
             </div>
           </div>
@@ -288,7 +283,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Mandatory human validation workflow
+                  Mandatory human contextual review workflow
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />

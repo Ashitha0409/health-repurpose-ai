@@ -48,7 +48,7 @@ const Insights = () => {
       <div className="mb-2">
         <h1 className="text-2xl font-semibold text-foreground">Insights</h1>
         <p className="text-muted-foreground text-sm mt-1">
-          Analytics and performance metrics for hypothesis validation
+          Analytics and performance metrics for contextual review
         </p>
       </div>
 
@@ -63,7 +63,7 @@ const Insights = () => {
               <div>
                 <p className="text-2xl font-bold text-foreground">+26%</p>
                 <p className="text-sm text-muted-foreground">
-                  Avg Confidence Improvement
+                  Avg Evidence Strength Improvement
                 </p>
               </div>
             </div>
@@ -79,7 +79,7 @@ const Insights = () => {
               <div>
                 <p className="text-2xl font-bold text-foreground">142</p>
                 <p className="text-sm text-muted-foreground">
-                  Hypotheses Validated
+                  Hypotheses Reviewed
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ const Insights = () => {
               Confidence Score Improvement
             </CardTitle>
             <p className="text-sm text-muted-foreground">
-              Before vs after clinician validation
+              Before vs after contextual review
             </p>
           </CardHeader>
           <CardContent>
@@ -159,13 +159,13 @@ const Insights = () => {
                     dataKey="before"
                     fill="hsl(var(--muted-foreground))"
                     radius={[4, 4, 0, 0]}
-                    name="Before Validation"
+                    name="Before Contextual Review"
                   />
                   <Bar
                     dataKey="after"
                     fill="hsl(var(--primary))"
                     radius={[4, 4, 0, 0]}
-                    name="After Validation"
+                    name="After Contextual Review"
                   />
                 </BarChart>
               </ResponsiveContainer>
@@ -180,7 +180,7 @@ const Insights = () => {
               Most Common Feasibility Issues
             </CardTitle>
             <p className="text-sm text-muted-foreground">
-              Distribution of clinician-flagged concerns
+              Distribution of domain-expert flagged concerns
             </p>
           </CardHeader>
           <CardContent>
@@ -239,7 +239,7 @@ const Insights = () => {
             Average Turnaround Time Trend
           </CardTitle>
           <p className="text-sm text-muted-foreground">
-            Days from validation request to completion
+            Days from contextual review request to completion
           </p>
         </CardHeader>
         <CardContent>
