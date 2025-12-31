@@ -31,10 +31,7 @@ const TopNav = ({
         </div>
         <div className="flex flex-col">
           <span className="font-semibold text-foreground text-base leading-tight">
-            HealthRepurpose AI
-          </span>
-          <span className="text-xs text-muted-foreground">
-            Drug Discovery Platform
+            ElaraX
           </span>
         </div>
       </div>

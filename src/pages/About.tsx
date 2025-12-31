@@ -95,7 +95,7 @@ const About = () => {
       {/* Page Header */}
       <div className="mb-2">
         <h1 className="text-2xl font-semibold text-foreground">
-          About HealthRepurpose AI
+          About ElaraX
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
           Learn about our platform architecture, security, and ethical AI
@@ -115,11 +115,7 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                HealthRepurpose AI accelerates drug discovery for neglected
-                tropical diseases by leveraging AI to identify potential drug
-                repurposing candidates from existing approved medications. Our
-              "The platform combines the power of Azure AI with rigorous domain expert review to ensure scientifically sound and ethically
-                responsible research outcomes.
+                ElaraX accelerates drug discovery for neglected tropical diseases by leveraging AI to identify potential drug repurposing candidates from existing approved medications. Our platform combines the power of Azure AI with rigorous domain expert review to ensure scientifically sound and ethically responsible research outcomes.
               </p>
             </div>
           </div>
