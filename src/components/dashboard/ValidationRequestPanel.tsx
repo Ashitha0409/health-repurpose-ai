@@ -30,7 +30,7 @@ const clinicians = [
 ];
 
 const validationQuestions = [
-  { id: "q1", text: "Have you observed similar therapeutic outcomes clinically?" },
+  { id: "q1", text: "Have you observed similar therapeutic outcomes in practice?" },
   { id: "q2", text: "Is the proposed dosage feasible for this indication?" },
   { id: "q3", text: "Are there known contraindications we should consider?" },
   { id: "q4", text: "Would you recommend further preclinical investigation?" },
@@ -53,7 +53,7 @@ const ValidationRequestPanel = () => {
   const handleSubmit = () => {
     setSubmitted(true);
     setTimeout(() => {
-      toast.success("Validation request sent successfully", {
+      toast.success("Contextual review request sent successfully", {
         description: `Request sent to ${
           clinicians.find((c) => c.id === selectedClinician)?.name
         }`,
@@ -72,14 +72,14 @@ const ValidationRequestPanel = () => {
           <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
             <Users className="w-4 h-4 text-primary" />
           </div>
-          Clinician Validation
+          Domain Expert Review
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col items-center justify-center py-6 space-y-4">
           <div className="text-center space-y-2">
             <p className="text-muted-foreground text-sm max-w-sm">
-              Request expert clinical validation to improve hypothesis accuracy
+              Request a domain expert contextual review to improve hypothesis accuracy
               and feasibility assessment.
             </p>
             <p className="text-xs text-muted-foreground">
@@ -91,17 +91,17 @@ const ValidationRequestPanel = () => {
             <DialogTrigger asChild>
               <Button variant="azure" className="gap-2">
                 <Users className="w-4 h-4" />
-                Request Clinical Validation
+                Request Contextual Review
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
-                <DialogTitle>Request Clinical Validation</DialogTitle>
+                <DialogTitle>Request Contextual Review</DialogTitle>
                 <DialogDescription>
-                  Select a clinician and validation questions to send your
+                  Select a domain expert and contextual review questions to send your
                   request.
                 </DialogDescription>
-              </DialogHeader>
+              </DialogHeader> 
 
               {!submitted ? (
                 <div className="space-y-6 py-4">
@@ -130,7 +130,7 @@ const ValidationRequestPanel = () => {
 
                   {/* Questions Selection */}
                   <div className="space-y-3">
-                    <Label>Validation Questions</Label>
+                    <Label>Contextual Review Questions</Label>
                     <div className="space-y-2">
                       {validationQuestions.map((question) => (
                         <div

@@ -19,7 +19,7 @@ const ClinicianValidation = () => {
     {
       id: "q1",
       question:
-        "Have you observed similar therapeutic outcomes with this drug in clinical practice?",
+        "Have you observed similar therapeutic outcomes with this drug in practice?",
       answer: null,
     },
     {
@@ -62,8 +62,8 @@ const ClinicianValidation = () => {
 
   const handleSubmit = () => {
     setSubmitted(true);
-    toast.success("Validation submitted successfully", {
-      description: "Your clinical feedback has been recorded.",
+    toast.success("Contextual review submitted successfully", {
+      description: "Your domain expert feedback has been recorded.",
     });
   };
 
@@ -74,10 +74,10 @@ const ClinicianValidation = () => {
       {/* Page Header */}
       <div className="mb-2">
         <h1 className="text-2xl font-semibold text-foreground">
-          Clinician Validation
+          Domain Expert Review
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
-          Review and validate AI-generated drug repurposing hypotheses
+          Conduct contextual review of AI-generated drug repurposing hypotheses
         </p>
       </div>
 
@@ -107,7 +107,7 @@ const ClinicianValidation = () => {
               </div>
               <div>
                 <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  AI Confidence Score
+                  Evidence Strength Score
                 </label>
                 <div className="flex items-center gap-3 mt-1">
                   <div className="progress-bar w-32">
@@ -147,7 +147,7 @@ const ClinicianValidation = () => {
       <Card className="card-elevated animate-fade-in">
         <CardHeader className="pb-3">
           <CardTitle className="text-lg font-semibold">
-            Validation Questions
+            Contextual Review Questions
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -215,7 +215,7 @@ const ClinicianValidation = () => {
             </Label>
             <Textarea
               id="comment"
-              placeholder="Provide any additional clinical insights or concerns..."
+              placeholder="Provide any additional domain expert insights or concerns..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               className="min-h-[100px] resize-none"
@@ -235,12 +235,12 @@ const ClinicianValidation = () => {
               {submitted ? (
                 <>
                   <CheckCircle2 className="w-5 h-5" />
-                  Validation Submitted
+                  Contextual Review Submitted
                 </>
               ) : (
                 <>
                   <Send className="w-5 h-5" />
-                  Submit Validation
+                  Submit Contextual Review
                 </>
               )}
             </Button>
@@ -255,10 +255,10 @@ const ClinicianValidation = () => {
             <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div>
               <p className="text-sm font-medium text-amber-800">
-                Research Validation Disclaimer
+                Research Contextual Review Disclaimer
               </p>
               <p className="text-sm text-amber-700 mt-1">
-                This validation is for research purposes only. It does not
+                This contextual review is for research purposes only. It does not
                 constitute medical advice, patient care recommendations, or
                 prescriptions. All data is handled in compliance with research
                 ethics guidelines.

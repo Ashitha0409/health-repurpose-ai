@@ -112,8 +112,8 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
 
   const handleSubmit = () => {
     setSubmitted(true);
-    toast.success("Validation submitted successfully", {
-      description: "Your clinical feedback has been recorded.",
+    toast.success("Contextual review submitted successfully", {
+      description: "Your domain expert feedback has been recorded.",
     });
     setTimeout(() => {
       setSelectedRequest(null);
@@ -143,10 +143,10 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
       {/* Page Header */}
       <div className="mb-2">
         <h1 className="text-2xl font-semibold text-foreground">
-          Clinician Dashboard
+          Domain Expert Dashboard
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
-          Review and validate AI-generated drug repurposing hypotheses
+          Conduct contextual review of AI-generated drug repurposing hypotheses
         </p>
       </div>
 
@@ -157,13 +157,13 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
             <CardHeader className="pb-3">
               <CardTitle className="text-lg font-semibold flex items-center gap-2">
                 <Clock className="w-5 h-5 text-azure" />
-                Pending Validations
+                Pending Contextual Reviews
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {filteredValidations.length === 0 ? (
                 <p className="text-muted-foreground text-sm text-center py-4">
-                  No pending validations for this disease.
+                  No pending contextual reviews for this disease.
                 </p>
               ) : (
                 filteredValidations.map((request) => (
@@ -255,7 +255,7 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                       </div>
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                          AI Confidence Score
+                          Evidence Strength Score
                         </label>
                         <div className="flex items-center gap-3 mt-1">
                           <div className="progress-bar w-32">
@@ -300,7 +300,7 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
               <Card className="card-elevated animate-fade-in">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg font-semibold">
-                    Validation Questions
+                    Contextual Review Questions
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -373,7 +373,7 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                     </Label>
                     <Textarea
                       id="comment"
-                      placeholder="Provide any additional clinical insights or concerns..."
+                      placeholder="Provide any additional domain expert insights or concerns..."
                       value={comment}
                       onChange={(e) => setComment(e.target.value)}
                       className="min-h-[100px] resize-none"
@@ -393,12 +393,12 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                       {submitted ? (
                         <>
                           <CheckCircle2 className="w-5 h-5" />
-                          Validation Submitted
+                          Contextual Review Submitted
                         </>
                       ) : (
                         <>
                           <Send className="w-5 h-5" />
-                          Submit Validation
+                          Submit Contextual Review
                         </>
                       )}
                     </Button>
@@ -413,10 +413,10 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                     <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm font-medium text-amber-800">
-                        Research Validation Disclaimer
+                        Research Contextual Review Disclaimer
                       </p>
                       <p className="text-sm text-amber-700 mt-1">
-                        This validation is for research purposes only. It does
+                        This contextual review is for research purposes only. It does
                         not constitute medical advice, patient care
                         recommendations, or prescriptions.
                       </p>
@@ -430,11 +430,11 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
               <CardContent className="py-16 text-center">
                 <FileText className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Select a Validation Request
+                  Select a Contextual Review Request
                 </h3>
                 <p className="text-muted-foreground text-sm max-w-md mx-auto">
-                  Choose a pending validation request from the list on the left
-                  to review the hypothesis and provide your clinical feedback.
+                  Choose a pending contextual review request from the list on the left
+                  to review the hypothesis and provide your domain expert feedback.
                 </p>
               </CardContent>
             </Card>

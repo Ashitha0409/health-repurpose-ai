@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
   { icon: Lightbulb, label: "AI Hypotheses", path: "/hypotheses" },
-  { icon: ClipboardCheck, label: "Clinician Validation", path: "/validation" },
+  { icon: ClipboardCheck, label: "Domain Expert Review", path: "/validation" },
   { icon: BarChart3, label: "Insights", path: "/insights" },
   { icon: Info, label: "About / Architecture", path: "/about" },
 ];
