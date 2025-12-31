@@ -3,6 +3,7 @@ import DiseaseContextCard from "@/components/dashboard/DiseaseContextCard";
 import HypothesesTable from "@/components/dashboard/HypothesesTable";
 import ValidationRequestPanel from "@/components/dashboard/ValidationRequestPanel";
 import ComparisonPanel from "@/components/dashboard/ComparisonPanel";
+import ClinicianDashboard from "@/components/dashboard/ClinicianDashboard";
 
 interface DashboardContext {
   selectedDisease: string;
@@ -10,7 +11,12 @@ interface DashboardContext {
 }
 
 const Dashboard = () => {
-  const { selectedDisease } = useOutletContext<DashboardContext>();
+  const { selectedDisease, role } = useOutletContext<DashboardContext>();
+
+  // Show clinician-specific dashboard
+  if (role === "clinician") {
+    return <ClinicianDashboard selectedDisease={selectedDisease} />;
+  }
 
   return (
     <div className="p-6 space-y-6 max-w-7xl mx-auto">
