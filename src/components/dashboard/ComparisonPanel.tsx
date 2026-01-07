@@ -45,15 +45,15 @@ const ComparisonPanel = () => {
           <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
             <TrendingUp className="w-4 h-4 text-primary" />
           </div>
-          Impact of Additional Context
+          Contextual Refinement Impact
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
           {[
-            "Evidence clarity ↑",
-            "Uncertainty ↓",
-            "Risk visibility ↑",
+            "Signal Verification ↑",
+            "Uncertainty Reduced ↓",
+            "Gap Identification ↑",
           ].map((text, index) => (
             <div
               key={text}
@@ -67,7 +67,7 @@ const ComparisonPanel = () => {
 
         {/* Sub-caption */}
         <div className="mt-4 pt-4 border-t border-border">
-          <p className="text-sm text-muted-foreground">Updated after contextual review</p>
+          <p className="text-sm text-muted-foreground">Metrics updated post-expert assessment</p>
         </div>
       </CardContent>
     </Card>

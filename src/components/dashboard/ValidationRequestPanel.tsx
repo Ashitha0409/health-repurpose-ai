@@ -72,18 +72,17 @@ const ValidationRequestPanel = () => {
           <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
             <Users className="w-4 h-4 text-primary" />
           </div>
-          Domain Expert Review
+          Expert Contextual Assessment
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col items-center justify-center py-6 space-y-4">
           <div className="text-center space-y-2">
             <p className="text-muted-foreground text-sm max-w-sm">
-              Request a domain expert contextual review to improve hypothesis accuracy
-              and feasibility assessment.
+              Request expert review to evaluate signal validity, identify data gaps, and assess clinical feasibility.
             </p>
             <p className="text-xs text-muted-foreground">
-              Collaborative AI-human workflow
+              Human-in-the-loop Validation
             </p>
           </div>
 
@@ -91,15 +90,14 @@ const ValidationRequestPanel = () => {
             <DialogTrigger asChild>
               <Button variant="azure" className="gap-2">
                 <Users className="w-4 h-4" />
-                Request Contextual Review
+                Request Expert Assessment
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
-                <DialogTitle>Request Contextual Review</DialogTitle>
+                <DialogTitle>Request Expert Assessment</DialogTitle>
                 <DialogDescription>
-                  Select a domain expert and contextual review questions to send your
-                  request.
+                  Select a subject matter expert to review evidence gaps and clinical context.
                 </DialogDescription>
               </DialogHeader> 
 
@@ -130,7 +128,7 @@ const ValidationRequestPanel = () => {
 
                   {/* Questions Selection */}
                   <div className="space-y-3">
-                    <Label>Contextual Review Questions</Label>
+                    <Label>Assessment Focus Areas</Label>
                     <div className="space-y-2">
                       {validationQuestions.map((question) => (
                         <div

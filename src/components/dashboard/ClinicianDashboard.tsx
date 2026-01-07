@@ -143,10 +143,10 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
       {/* Page Header */}
       <div className="mb-2">
         <h1 className="text-2xl font-semibold text-foreground">
-          Domain Expert Dashboard
+          Expert Assessment Portal
         </h1>
         <p className="text-muted-foreground text-sm mt-1">
-          Conduct contextual review of AI-generated drug repurposing hypotheses
+          Review signal quality and clinical relevance of potential repurposing candidates
         </p>
       </div>
 
@@ -231,7 +231,7 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg font-semibold flex items-center gap-2">
                     <FileText className="w-5 h-5 text-azure" />
-                    Hypothesis Summary
+                    Signal Summary
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -239,7 +239,7 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                     <div className="space-y-4">
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                          Drug Candidate
+                          Candidate
                         </label>
                         <p className="text-foreground font-semibold text-lg mt-1">
                           {selectedRequest.drug}
@@ -247,7 +247,7 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                       </div>
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                          Target Disease
+                          Target Indication
                         </label>
                         <p className="text-foreground font-medium mt-1">
                           {selectedRequest.disease}
@@ -255,40 +255,55 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                       </div>
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                          Evidence Strength Score
+                          Signal Strength
                         </label>
                         <div className="flex items-center gap-3 mt-1">
-                          <div className="progress-bar w-32">
+                          <div className="progress-bar w-32 bg-slate-100 rounded-full h-2">
                             <div
-                              className="progress-bar-fill bg-success"
+                              className="h-full rounded-full bg-blue-500"
                               style={{
                                 width: `${selectedRequest.confidence}%`,
                               }}
                             />
                           </div>
-                          <span className="font-semibold text-success">
-                            {selectedRequest.confidence}%
+                          <span className="font-semibold text-blue-600">
+                            {selectedRequest.confidence}/100
                           </span>
+                        </div>
+                        <div className="mt-2 text-xs text-muted-foreground space-y-1">
+                          <p>Based on automated literature mining.</p>
+                          <div className="flex gap-3">
+                            <span className="inline-flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                              Coverage: Robust
+                            </span>
+                            <span className="inline-flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                              Consistency: Mixed
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                     <div className="space-y-4">
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                          Source of Evidence
+                          Available Evidence & Gaps
                         </label>
                         <p className="text-foreground font-medium mt-1">
-                          Literature Review (12 papers)
+                          Literature Synthesis (12 papers)
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          This summary highlights both supporting signals and areas where evidence is missing or inconclusive.
                         </p>
                       </div>
                       <div>
                         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                          Proposed Mechanism
+                          Mechanism Hypothesis
                         </label>
                         <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                          Inhibition of viral entry through endosomal pH
-                          modification and interference with glycosylation of
-                          cellular receptors.
+                          Inhibition of viral entry through endosomal pH modification. 
+                          <span className="block mt-1 italic text-xs">Note: This mechanism is supported by in vitro studies; clinical relevance remains uncertain.</span>
                         </p>
                       </div>
                     </div>
@@ -299,9 +314,18 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
               {/* Validation Questions */}
               <Card className="card-elevated animate-fade-in">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-lg font-semibold">
-                    Contextual Review Questions
-                  </CardTitle>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-azure" />
+                      Expert Verification & Annotation
+                    </CardTitle>
+                    <Badge variant="outline" className="font-normal text-muted-foreground">
+                      Human-in-the-Loop
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Your clinical expertise helps validate AI signals and identify evidence gaps.
+                  </p>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {questions.map((question, index) => (
@@ -393,17 +417,29 @@ const ClinicianDashboard = ({ selectedDisease }: ClinicianDashboardProps) => {
                       {submitted ? (
                         <>
                           <CheckCircle2 className="w-5 h-5" />
-                          Contextual Review Submitted
+                          Assessment Recorded
                         </>
                       ) : (
                         <>
                           <Send className="w-5 h-5" />
-                          Submit Contextual Review
+                          Submit Assessment
                         </>
                       )}
                     </Button>
                   </div>
                 </CardContent>
+              </Card>
+
+              {/* Decision Support Summary */}
+              <Card className="card-elevated">
+                 <CardHeader className="pb-2">
+                    <CardTitle className="text-base font-semibold">Decision Support Summary</CardTitle>
+                 </CardHeader>
+                 <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                       This platform does not recommend actions or treatments. It supports transparent comparison of research options by making uncertainty, assumptions, and evidence gaps explicit.
+                    </p>
+                 </CardContent>
               </Card>
 
               {/* Disclaimer */}
