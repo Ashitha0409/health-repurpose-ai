@@ -10,6 +10,7 @@ import ClinicianValidation from "./pages/ClinicianValidation";
 import Insights from "./pages/Insights";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import LandingPage from "./pages/LandingPage";
 
 const queryClient = new QueryClient();
 
@@ -20,8 +21,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route element={<AppLayout />}>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/researcher" element={<Dashboard />} />
+            <Route path="/clinician" element={<Dashboard />} />
             <Route path="/hypotheses" element={<Hypotheses />} />
             <Route path="/validation" element={<ClinicianValidation />} />
             <Route path="/insights" element={<Insights />} />
